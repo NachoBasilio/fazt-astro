@@ -1,0 +1,57 @@
+---
+const {pathname} = Astro.url
+console.log(pathname)
+---
+
+<header>
+    <nav>
+        <ul class="menu">
+            <li><a class={pathname == "/mis_servicios" ? "activo":""} href="/mis_servicios">Mis Servicios</a></li>
+            <li><a class={pathname == "/sobre_mi" ? "activo":""} href="/sobre_mi">Sobre Mí</a></li>
+            <li><a class={pathname == "/" ? "activo":""} href="/">Inicio</a></li>
+        </ul>
+    </nav>
+</header>
+
+<style>
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav ul.menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+   
+}
+
+nav ul.menu li {
+    display: inline;
+    margin: 0 10px;
+    transition: 2s;
+}
+
+nav ul.menu li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    
+}
+
+nav ul.menu li a.activo {
+    color: grey;
+    font-size: 120%;
+}
+
+
+</style>

@@ -1,5 +1,10 @@
 ---
-const {title, body} = Astro.props
+interface Props{// interface que define os tipos de dados que seran recebidos
+    title?: string
+    body?: string
+}
+
+const {body= "Defult Content", title="Default title"} = Astro.props
 ---
 
 <div>

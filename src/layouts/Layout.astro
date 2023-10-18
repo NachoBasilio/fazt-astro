@@ -3,6 +3,8 @@ interface Props {
 	title: string;
 }
 
+import Header from '../components/Header.astro';
+
 const { title } = Astro.props;
 ---
 
@@ -14,9 +16,10 @@ const { title } = Astro.props;
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
+		<title>Astro Curso | {title}</title>
 	</head>
 	<body>
+		<Header></Header>
 		<slot />
 	</body>
 </html>
