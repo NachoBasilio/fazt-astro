@@ -3,30 +3,58 @@ interface Props{// interface que define os tipos de dados que seran recebidos
     title?: string
     body?: string
 }
+const numerorandomEntreTresYUno = Math.floor(Math.random() * 3);
+
+const urlTecnologias = ["https://equk.co.uk/media/logos/astro.svg", "https://cdn.icon-icons.com/icons2/2389/PNG/512/react_logo_icon_144942.png", "https://i0.wp.com/seeklogo.com/images/J/javascript-logo-851B872133-seeklogo.com.png"]
 
 const {body= "Defult Content", title="Default title"} = Astro.props
 ---
 
 <div>
-    <h1>{title}</h1>
-    <p>{body}</p>
+    <h1>{title.trim().replace(/^\w/, (c) => c.toUpperCase()) }</h1>
+    <p>{body.trim().replace(/^\w/, (c) => c.toUpperCase())}.</p>
+    <img class="imagenFondo"src={urlTecnologias[numerorandomEntreTresYUno]} alt="">
 </div>
 
 <style>
-    div {
-        background-color: #f1f1f1;
-        padding: 20px;
-        margin: 20px;
-        border-radius: 5px;
-        box-shadow: white 0px 0px 10px;
-    }
-    h1 {
-        color: #000;
-        font-size: 20px;
-        font-weight: bold;
-    }
-    p {
-        color: #000;
-        font-size: 16px;
-    }
+div {
+    background-color: #f1f1f1;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 5px;
+    width: 380px;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+}
+
+h1 {
+    color: #000;
+    font-size: 20px;
+    font-weight: bold;
+    position: relative;
+    z-index: 2;
+}
+
+p {
+    color: #000;
+    font-size: 16px;
+    position: relative;
+    z-index: 2;
+}
+
+.imagenFondo {
+    position: absolute;
+    width: 120px;
+    bottom: -40px;
+    right: 0;
+    z-index: 1;
+    transition: transform 0.5s ease, bottom 0.5s ease; /* Aplicar la transición aquí */
+}
+
+.imagenFondo:hover {
+    transform: scale(1.1);
+    bottom: 0px;
+}
+
 </style>

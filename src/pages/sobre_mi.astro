@@ -5,7 +5,60 @@ import Layout from "../layouts/Layout.astro";
 
 
 <Layout title="Sobre mi">
-    <h1>Home</h1>
-    <p>Asi se crean mas paginas</p>
+    <div class="hero">
+        <img src="https://www.santafe.gob.ar/noticias/media/cache/thumb_no_full/recursos/fotos/2022/11/2022-11-28NID_276719O_1.jpeg" alt="">
+    </div>
+    <article>
+        <h1>@AGJavaScriptero</h1>
+        <p>¡Hola! Soy un aguará guazú apasionado por el mundo de la programación y la tecnología. Siendo un amante de la naturaleza, mi nombre es una manifestación de mi conexión con la biodiversidad, y mi espíritu de exploración se refleja en mi búsqueda constante de soluciones creativas en el mundo digital.</p>
+        <p>Mi experiencia se centra en el desarrollo web, con un enfoque particular en las tecnologías más modernas. JavaScript es mi lenguaje de programación favorito, y me encanta aprovechar su potencial para crear experiencias interactivas y dinámicas en la web. Desde la creación de sitios web elegantes hasta la implementación de aplicaciones web complejas, JavaScript es mi herramienta de elección.</p>
+        <p>Además, soy un entusiasta de React, el popular marco de trabajo de JavaScript. Me encanta la forma en que React permite construir interfaces de usuario eficientes y reactivas, lo que brinda a los usuarios experiencias excepcionales. He trabajado en proyectos que van desde pequeñas aplicaciones hasta sistemas empresariales escalables, siempre buscando la forma más elegante de abordar los desafíos.</p>
+        <p>También, tengo experiencia en Astro, una emocionante nueva tecnología que combina la velocidad de carga de las páginas estáticas con la capacidad de interactividad de las aplicaciones de una sola página. Estoy emocionado por la evolución constante de esta tecnología y las oportunidades que ofrece para crear sitios web ultraeficientes y altamente interactivos.</p>
+        <p>En mi tiempo libre, disfruto explorar el aire libre y la vida silvestre, inspirándome en la naturaleza para mi trabajo en programación. Creo firmemente que la creatividad y la innovación son esenciales en el mundo de la tecnología, y siempre busco nuevas formas de abordar problemas y desarrollar soluciones únicas.</p>
+        <p>Si estás buscando un desarrollador web apasionado que combine habilidades técnicas sólidas con una perspectiva fresca y creativa, no dudes en contactarme. Estoy emocionado por cada oportunidad de colaborar en proyectos emocionantes y ayudar a llevar ideas a la vida en el mundo digital.</p>
+        <p>¡Espero tener la oportunidad de trabajar contigo y contribuir a hacer que la web sea un lugar más atractivo y eficiente para todos!</p>
+    </article>
+    <script>
+        const hero = document.querySelector(".hero") as HTMLElement;
+
+        window.addEventListener("scroll", () => {
+            const scrollValue = window.scrollY;
+            const newHeight = 40 - scrollValue * 0.2; // Ajusta el factor de reducción según tu preferencia
+            hero.style.height = `${newHeight}vh`;
+        });
+    </script>
 </Layout>
 
+<style>
+.hero {
+    overflow: hidden;
+    height: 100vh;
+    transition: height 1.5s; /* Transición para suavizar el efecto de achicamiento */
+}
+
+.hero img {
+    width: 100%;
+    display: block;
+   
+}
+article{
+    padding: 0 20px;
+    margin: 0 auto;
+    max-width: 800px;
+    font-size: 20px;
+    line-height: 1.5;
+}
+h1 {
+    color: white;
+    position: relative;
+    z-index: 1; /* Para asegurarse de que el texto esté por encima de la imagen */
+}
+
+p {
+    margin-bottom: 1rem;
+    padding-left: 40px;
+    color: white;
+    font-size: 20px;
+}
+
+</style>
