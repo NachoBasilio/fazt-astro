@@ -2,7 +2,6 @@
 import Layout from '../layouts/Layout.astro';
 
 import ButtonSubscribe from '../components/ButtonSubscribe';
-import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
@@ -16,7 +15,7 @@ import 'react-toastify/dist/ReactToastify.css';
 		<span>Subscribete a mis newsletter</span>
 		<input type="text">
 		<ButtonSubscribe client:load></ButtonSubscribe>
-		<ToastContainer client:load
+
 	</div>
 </Layout>
 

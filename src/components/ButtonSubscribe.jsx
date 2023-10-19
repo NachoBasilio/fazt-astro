@@ -1,6 +1,8 @@
 import {useState} from 'react'
 import '../style/botton.css'
 import { toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
+
 
 
 export default function ButtonSubscribe() {
@@ -17,6 +19,7 @@ export default function ButtonSubscribe() {
         >{
             subs ? 'Suscríbete' : 'Subscripto'
         }</button>
+        		<ToastContainer></ToastContainer>
     </>
   )
 }
