@@ -1,12 +1,22 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+
+import ButtonSubscribe from '../components/ButtonSubscribe';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
 ---
 
 <Layout title="Home">
 	<div class="titulo">
 		<h2>Esta es mi pagina test, aca estoy probando muchas cosas de Astro🚀</h2>
-		<p>Aguante ASTRO.</p>
+	</div>
+	<div class="newsletter">
+		<span>Subscribete a mis newsletter</span>
+		<input type="text">
+		<ButtonSubscribe client:load></ButtonSubscribe>
+		<ToastContainer client:load
 	</div>
 </Layout>
 
@@ -26,6 +36,27 @@ import Card from '../components/Card.astro';
 	p{
 		color: wheat;
 	}
+
+	.newsletter {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.newsletter span {
+    font-size: 18px;
+    font-weight: bold;
+    display: block; /* Para que el texto esté en una línea nueva */
+}
+
+.newsletter input {
+    padding: 10px;
+    border: 1px solid #575757;
+    border-radius: 5px;
+    margin-top: 10px;
+}
 
 
 </style>
