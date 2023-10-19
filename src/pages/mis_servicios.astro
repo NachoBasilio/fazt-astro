@@ -16,7 +16,9 @@ const data = await response.json() as User[]
 
 
 <Layout title="Mis servicios">
-    <h1>Algunos de los trabajos que realice:</h1>
+    <div>
+        <h1 class="titulo-sobremi">Algunos de los trabajos que realice</h1>
+    </div>
     <div>
         {   
             data.map((item) => (
@@ -28,11 +30,20 @@ const data = await response.json() as User[]
 
 
 <style>
-    h1 {
-        color: white;
-        margin-left: 60px;
-        font-size: 60px;
-    }
+.contenedor-titulo {
+  padding: 20px; 
+  text-align: center;
+}
+
+/* Estilos para el encabezado <h1> con clase "titulo-sobremi" */
+h1.titulo-sobremi {
+  font-family: 'Helvetica', Arial, sans-serif; /* Fuente del texto */
+  font-size: 64px; /* Tamaño de fuente */
+  color: #e9e9e9; /* Color del texto */
+  text-transform: uppercase; /* Transformación de texto a mayúsculas */
+  margin: 0; /* Elimina el margen predeterminado */
+  padding: 10px 0; /* Espaciado interno superior e inferior */
+}
     div{
         display: flex;
         flex-wrap: wrap;

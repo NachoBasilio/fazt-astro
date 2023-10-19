@@ -7,6 +7,8 @@ const numerorandomEntreTresYUno = Math.floor(Math.random() * 3);
 
 const urlTecnologias = ["https://equk.co.uk/media/logos/astro.svg", "https://cdn.icon-icons.com/icons2/2389/PNG/512/react_logo_icon_144942.png", "https://i0.wp.com/seeklogo.com/images/J/javascript-logo-851B872133-seeklogo.com.png"]
 
+const imagenesDeProyectos = ["https://th.bing.com/th/id/OIG.cmda5v6PAsrS4sPhU_yh?pid=ImgGn","https://th.bing.com/th/id/OIG.y1Vgr6RRPMFEpECanVE7?pid=ImgGn", "https://th.bing.com/th/id/OIG.SvocvDLVpBNOWxpKF9MX?pid=ImgGn"]
+
 const {body= "Defult Content", title="Default title"} = Astro.props
 ---
 
@@ -17,23 +19,30 @@ const {body= "Defult Content", title="Default title"} = Astro.props
 </div>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
 div {
-    background-color: #f1f1f1;
-    padding: 20px;
+    background-color: rgb(31, 31, 31);
+    padding: 10px 20px 10px 20px;
     margin: 20px;
     border-radius: 5px;
-    width: 380px;
+    width: 400px;
     height: 200px;
     position: relative;
     overflow: hidden;
+    color: w
+    
 }
 
 h1 {
     color: #000;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
     position: relative;
     z-index: 2;
+    font-family: 'Poppins', sans-serif;
+    color: rgb(196, 196, 196);
+    
 }
 
 p {
@@ -41,20 +50,30 @@ p {
     font-size: 16px;
     position: relative;
     z-index: 2;
+    color: rgb(196, 196, 196);
 }
 
 .imagenFondo {
     position: absolute;
-    width: 120px;
-    bottom: -40px;
+    width: 150px;
+    bottom: -20px;
     right: 0;
     z-index: 1;
     transition: transform 0.5s ease, bottom 0.5s ease; /* Aplicar la transición aquí */
 }
 
-.imagenFondo:hover {
-    transform: scale(1.1);
-    bottom: 0px;
+
+
+.imagenProyecto{
+    position: absolute;
+    width: 450px;
+    bottom: -400px;
+    left: 0;
+    z-index: 0;
+    transition: transform 0.5s ease, bottom 0.5s ease; /* Aplicar la transición aquí */
 }
+
+
+
 
 </style>
