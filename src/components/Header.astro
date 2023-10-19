@@ -1,18 +1,28 @@
----
-const {pathname} = Astro.url
-console.log(pathname)
----
 
 <header>
     <nav>
         <ul class="menu">
-            <li><a class={pathname == "/mis_servicios" ? "activo":""} href="/mis_servicios">Mis Servicios</a></li>
-            <li><a class={pathname == "/sobre_mi" ? "activo":""} href="/sobre_mi">Sobre Mí</a></li>
-            <li><a class={pathname == "/" ? "activo":""} href="/">Inicio</a></li>
+            <li><a id="misServicios" href="/mis_servicios">Mis Servicios</a></li>
+            <li><a id="sobreMi" href="/sobre_mi">Sobre Mí</a></li>
+            <li><a id="inicio" href="/">Inicio</a></li>
         </ul>
     </nav>
 </header>
+<script>
+        let pathname = window.location.pathname; // Obtener la URL actual
+        let misServiciosLink = document.getElementById("misServicios");
+        let sobreMiLink = document.getElementById("sobreMi");
+        let inicioLink = document.getElementById("inicio");
 
+        // Comparar el pathname actual con las rutas y aplicar el estilo activo
+        if (pathname === "/mis_servicios") {
+            misServiciosLink?.classList.add("activo");
+        } else if (pathname === "/sobre_mi") {
+            sobreMiLink?.classList.add("activo");
+        } else if (pathname === "/") {
+            inicioLink?.classList.add("activo");
+        }
+</script>
 <style>
 
 body {
